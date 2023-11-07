@@ -3,7 +3,7 @@ import React from "react";
 import MoviesList from "./components/MoviesList";
 import "./App.css";
 import { useState , useEffect , useCallback } from "react";
-
+import Form from "./components/Form";
 function App() {
   const [movies, setMovies] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -54,16 +54,16 @@ function App() {
  
   return (
     <React.Fragment>
+      <Form/>
       <section>
         <button onClick={fetchMoviesHandler}>Fetch Movies</button>
-        <button >Cancel trying</button>
         
       </section>
 
       <section>
         {isLoading && (
           <div className="loader-container">
-            <div class="loader"></div>
+            <div className="loader"></div>
           </div>
         )}
 
