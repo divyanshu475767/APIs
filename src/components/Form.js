@@ -1,7 +1,7 @@
 import React from 'react'
 import './Form.css'
 import { useState } from 'react'
-const Form = () => {
+const Form = (props) => {
 
   const [title , setTitle] = useState('');
   const [text , setText] = useState('');
@@ -27,11 +27,16 @@ const dateHandler = (e) =>{
 
 const submitHandler = (e) =>{
     e.preventDefault();
-    console.log(title , text, date);
+    props.getData({
+        title:title,
+        openingText:text,
+        releaseDate:date
+    })
     setDate('');
     setText('');
     setTitle('');
 }
+
 
 
 
